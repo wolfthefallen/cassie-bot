@@ -32,10 +32,9 @@ class IMContentText(object):
 		if self.font:
 			xhtml.set('style', 'font-family: ' + self.font + ';')
 		for subline in lines[:-1]:
-			p = ET.SubElement(xhtml, 'p')
+			p = ET.SubElement(xhtml, 'br')
 			p.text = subline
-			ET.SubElement(xhtml, 'br')
-		p = ET.SubElement(xhtml, 'p')
+		p = ET.SubElement(xhtml, 'br')
 		p.text = lines[-1]
 		if element:
 			return xhtml
